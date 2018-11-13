@@ -54,5 +54,7 @@ Install and run STAR aligner. Instructions and documentation can be found [here.
 ## NOTE:
 - The RNA-Seq and Microarray scripts are written for data aligned using STAR. You have to edit the code for it to take an input of count data
 - The R scripts for analysing Microarray and RNA-Seq data requires a file listing the sample names and other meta-information. Please refer to the example file in data folder titled 'phenodata.csv'. 
+- The sample names in phenodata.csv should match the sample names in the count matrix
+- The 'maineffect' column in phenodata.csv is required. This column specifies the effect that is being tested for
 - If you want to use a file for specifying contrasts instead of adding it to the script, refer to the file in the data folder titled 'contrastlist.csv'
 

@@ -46,7 +46,7 @@ install.packages(c("dplyr","readr","Matrix","cowplot"))
 
 ## try http:// if https:// URLs are not supported
 source("https://bioconductor.org/biocLite.R")
-biocLite(c("Seurat"))
+biocLite("Seurat")
 ```
 ### STAR
 Install and run STAR aligner. Instructions and documentation can be found [here.](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)

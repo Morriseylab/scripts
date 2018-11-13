@@ -1,5 +1,5 @@
 # Scripts
-Scripts for analysis
+RScripts and codes for analysis
 
 ## Files
 

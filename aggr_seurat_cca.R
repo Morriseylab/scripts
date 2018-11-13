@@ -12,6 +12,7 @@ maxdim = 40 # Maximum number of dimensions (principle components) to compute
 mindim = 4 # Minimum number of dimensions (principle components) to compute
 maxres = 1.6 # Maximum number of resolutions to use to find clusters
 minres = 0.4 # Minimum number of resolutions to use to find clusters
+
 #If you have a list of markergenes, enter here as a character vector or leave it as NA. Keep in mind the organism and use the right genenames
 markergenes <- c('Pecam1','Nkx2-1','Acta2','Wt1','Ptprc','Hba-a1','Epcam','Wnt2','Cd86','Gypa','Sftpc','Pdgfrb','Hopx','Pdgfra')			
 

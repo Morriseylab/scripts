@@ -1,14 +1,17 @@
 library(Seurat)
 library(dplyr)
 library(readr)
+
 #Pallette for nicer looking plots
 cpallette=c("#64B2CE", "#DA5724", "#74D944", "#CE50CA", "#C0717C", "#CBD588", "#5F7FC7", 
             "#673770", "#D3D93E", "#8569D5", "#508578", "#D7C1B1", "#689030", "#AD6F3B", "#CD9BCD", 
             "#D14285", "#6DDE88", "#652926", "#7FDCC0", "#C84248", "#8569D5", "#5E738F", "#D1A33D", 
             "#8A7C64", "#599861")
-### Specify the name of the outpur directory. 
+
+### Specify the name of the output directory. 
 outdir='P15'
-## Spefiicy the name of the analysis 
+
+## Specify the name of the analysis 
 projectname='JZ_lung_P12' # specify project name. 
 
 ## Currently this script is coded to use 10x genomics output. 
@@ -20,12 +23,13 @@ org='mouse'
 #Set the min and max of PCA dimensions to test. 
 maxdim = 80 
 mindim = 10 
+
 #If you have a list of markergenes, enter here as a character vector or leave it as NA. Keep in mind the organism and use the right genenames
 # example is markergenes <- c("PDGFRA","DCN","ACTA2","CD34","COL3A1","MYH11","ITGA8","PDGFRB","DES")
 markergenes=NA 
 
 
-## In order for the cellc cycle calculation to work with mouse, we need an file with mouse/human orthologs
+## In order for the cell cycle calculation to work with mouse, we need an file with mouse/human orthologs
 mouseorthologfile <- '~/dsdata/NGSshare/homologs/mouse_human.csv'
 
 

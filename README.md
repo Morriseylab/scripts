@@ -12,4 +12,4 @@ RScripts and codes for analysis
 ### Run STAR
 - run_STAR_singlepass.pl    : Run STAR aligner on fastq files
 - parseSTARLog.pl           : Read STAR Log.out files to create a summary of results
-- createsummary.R           : Create STAR and Picard summary files into RData file to upload into STARSummary [website]()
+- createsummary.R           : Create STAR and Picard summary files into RData file to upload into STARSummary [website](https://github.com/Morriseylab/STARSummary)

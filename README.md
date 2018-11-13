@@ -48,6 +48,8 @@ install.packages(c("dplyr","readr","Matrix","cowplot"))
 source("https://bioconductor.org/biocLite.R")
 biocLite(c("Seurat"))
 ```
+### STAR
+Install and run STAR aligner. Instructions and documentation can be found [here.](http://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STAR.posix/doc/STARmanual.pdf)
 
 ## NOTE:
 - The RNA-Seq and Microarray scripts are written for data aligned using STAR. You have to edit the code for it to take an input of count data

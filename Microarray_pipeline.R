@@ -6,9 +6,7 @@ require(devtools)
 install_github('mpmorley/ExpressExtras')
 library(ExpressExtras)
 library(plyr)
-library(dplyr)
 library(tidyr)
-library(limma)
 library(NMF)
 library(RColorBrewer)
 library(ggplot2)
@@ -18,7 +16,7 @@ library(readr)
 library(topGO)
 
 
-################################### Please Set the following Paramtrers ##################################
+################################### Please Set the following Parameters ##################################
 #
 projectname='CCAM_array'
 constrastmaker='auto' #set to either file or auto
@@ -143,33 +141,13 @@ topgo <-vector(mode="list", length=length(contrastnames))
 names(topgo) <- contrastnames
 spia<-  vector(mode="list", length=length(contrastnames))
 names(spia) <- contrastnames
-# eplot<-  vector(mode="list", length=length(contrastnames))
-# names(eplot) <- contrastnames
-# gsea<-  vector(mode="list", length=length(contrastnames))
-# names(gsea) <- contrastnames
-
-
 
 for(i in 1:length(contrastnames)){
   print(contrastnames[i])
   limma[[contrastnames[i]]] <- Cleanup(topTable(fit2,coef=i,n=Inf,p.value=1)) 
   topgo[[contrastnames[i]]] <- runTopGO(limma[[contrastnames[i]]],organism =unique(pData$organism))
   
-  #   #for each limma data (corresponding to the contrast), run ReactomePA
   k=limma[[contrastnames[i]]]
-  #   genes = k$fc
-  #   names(genes) = k$ENTREZID 
-  #   genes = genes[complete.cases(names(genes))]
-  #   genes = genes[unique(names(genes))] 
-  #   ss=genes[order(-genes)]
-  #   y <- gsePathway(ss,organism="mouse")
-  #   gsea[[contrastnames[i]]]=y
-  #   if(nrow(summary(y))>0){
-  #     eplot[[contrastnames[i]]] <-summary(y)}
-  #   else{
-  #     eplot[[contrastnames[i]]] <- data.frame()
-  #   }
-  
   #for each limma data (corresponding to the contrast), run SPIA
   limma_sel <- k[which(abs(k$fc) > 2 & k$adj.P.Val < 0.05),]
   if(nrow(limma_sel)>0){
@@ -185,8 +163,6 @@ for(i in 1:length(contrastnames)){
   res.h <- camera(v, h.indices, design,contrast.matrix[,i],inter.gene.cor=0.01)
   res.c2 <- camera(v, c2.indices, design,contrast.matrix[,i],inter.gene.cor=0.01)
   res.GO <- camera(v, GO.indices, design,contrast.matrix[,i],inter.gene.cor=0.01)
-  #res.c3 <- camera(v, c3.indices, design,i,inter.gene.cor=0.01)
-  #res.c4 <- camera(v, c4.indices, design,i,inter.gene.cor=0.01)
   camera[[contrastnames[i]]] <- list(Hallmark=list(camera_result=res.h,indices=h.indices),Curated=list(camera_result=res.c2,indices=c2.indices),GO=list(camera_result=res.GO,indices=GO.indices))
 }
 

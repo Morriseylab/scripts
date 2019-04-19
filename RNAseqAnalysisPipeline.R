@@ -1,5 +1,5 @@
 require(devtools)
-install_github('mpmorley/ExpressExtras')
+install_github('Morriseylab/ExpressExtras')
 library(ExpressExtras)
 library(plyr)
 library(dplyr)

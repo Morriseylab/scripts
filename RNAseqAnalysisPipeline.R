@@ -21,6 +21,7 @@ projectname='RNAseq_1n2nCardio'
 #MSigDB_path='~/dsdata/projects/data_public/MSigDB/'
 librarytype='unstranded'
 constrastmaker='auto' #set to either file or auto
+mouseversion ='mm10'
 #
 ##########################################################################################################
 
@@ -69,7 +70,15 @@ cts <- as.matrix(dataset[,2:dim(dataset)[2]])
 rownames(cts)<-dataset$gene
 
 ############# Get a data.frame of gene annotations #######################
-genenames <- GeneAnnotate(as.character(dataset$gene),organism = unique(pData$organism))
+mm=c("mouse","Mouse","Mm","Mus musculus","Mus_musculus")
+hs=c("human","Human","Hs","Homo sapiens","Homo_sapiens")
+
+if(unique(pData$organism) %in% mm){
+  org =mouseversion
+}else if(unique(pData$organism) %in% hs){
+  org ="human"
+}
+genenames <- GeneAnnotate(as.character(dataset$gene),organism = org)
 rownames(genenames)=genenames$ENSEMBL
 
 ######### Add protein type to the fdata #######################

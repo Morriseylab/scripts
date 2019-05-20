@@ -39,6 +39,7 @@ biocLite(c("limma","edgeR","org.Mm.eg.db","EnsDb.Mmusculus.v75","SPIA"))
 
 #Install this package having additional functions
 install_github('mpmorley/ExpressExtras')
+install_github('mpmorley/scExtras')
 
 ```
 #### Single Cell RNA-Seq using Seurat

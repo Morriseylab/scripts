@@ -8,6 +8,7 @@ RScripts and codes for analysis
 - RNAseqAnalysisPipeline.R  : RNA-Seq analysis pipeline
 - scRNA_seurat_pipeline.R   : Single cell RNA-Seq analysis pipeline using Seurat
 - aggr_seurat_cca.R         : Single cell RNA-Seq analysis for aggregate data pipeline using Seurat
+- Seurat_v3.R               : Single cell RNA-Seq analysis pipeline using Seurat version3 and scExtras package
 
 ### Run STAR
 - run_STAR_singlepass.pl    : Run STAR aligner on fastq files
